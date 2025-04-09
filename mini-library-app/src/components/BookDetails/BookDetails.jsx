@@ -5,6 +5,11 @@ import './bookDetails.css';
 function BookDetails({ book }) {
     const { bookmarks, addBookmark, removeBookmark } = useLocalStorageBookmarks();
 
+    const isBookmarked = (book) => {
+        if(bookmarks.some(b => b.id === book.id)) return true;
+        else return false;
+    }
+
   return (
     <article className="details">
         <div className="details__titles">
@@ -32,7 +37,11 @@ function BookDetails({ book }) {
                 {book.publisher}
             </p>
         </div>
-        <Button onClick={() => addBookmark(book)} text="Oh, I want to read it!" />
+        {
+            isBookmarked(book) ?
+            <Button onClick={() => removeBookmark(book.id)} text="Read it, loved it!" /> :
+            <Button onClick={() => addBookmark(book)} text="Oh, I want to read it!" /> 
+        }
     </article>
   )
 }

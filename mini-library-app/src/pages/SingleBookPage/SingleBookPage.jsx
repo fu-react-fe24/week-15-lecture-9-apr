@@ -21,7 +21,7 @@ function SingleBookPage() {
   return (
     <section className="page single-page">
         <section className="single-page__container">
-            <Icon />
+            <Icon path="/" type="fa-arrow-left" />
             <section className="single-page__details">
                 {
                     book && <Book book={ book } larger={true} />

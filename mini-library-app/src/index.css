@@ -23,10 +23,15 @@
   place-content: center;
   gap: 1rem;
 
-  .page__title {
-    font-size: 3rem;  
+  .page__top {
+    display: flex;
+    justify-content: space-between;
+    
+    .page__title {
+      font-size: 3rem;  
+    }
   }
-
+    
   .page__list {
     width: 100%;
     display: grid;

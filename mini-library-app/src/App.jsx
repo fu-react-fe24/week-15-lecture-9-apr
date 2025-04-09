@@ -1,6 +1,7 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import LibraryPage from './pages/LibraryPage/LibraryPage';
 import SingleBookPage from './pages/SingleBookPage/SingleBookPage';
+import BookmarksPage from './pages/BookmarksPage/BookmarksPage';
 
 function App() {
 
@@ -12,6 +13,10 @@ function App() {
     {
       path : '/books/:id',
       element : <SingleBookPage />
+    },
+    {
+      path : '/bookmarks',
+      element : <BookmarksPage />
     }
   ]);
 
